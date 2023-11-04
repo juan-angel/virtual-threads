@@ -4,6 +4,7 @@ import java.time.Duration;
 import java.time.Instant;
 
 public abstract class MultipleThreadsTask {
+	protected static final int AMOUNT_TASKS = 100_000;
 	
 	protected abstract void performTask();
 	

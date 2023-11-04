@@ -13,11 +13,11 @@ public class MultipleRegularThreadsTaskImpl extends MultipleThreadsTask {
 	@Override
 	protected void performTask() {
 		try (var executor = Executors.newCachedThreadPool()) {
-		    IntStream.range(0, 10_000).forEach(i -> {
+		    IntStream.range(0, MultipleThreadsTask.AMOUNT_TASKS).forEach(i -> {
 		        executor.submit(() -> {
 		            Thread.sleep(Duration.ofSeconds(1));
-		            System.out.println("" + i);
-		            return i;
+		            System.out.println(i);
+		            return 0;
 		        });
 		    });
 		}

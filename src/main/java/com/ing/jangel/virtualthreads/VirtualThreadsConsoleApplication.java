@@ -1,5 +1,7 @@
 package com.ing.jangel.virtualthreads;
 
+import java.util.concurrent.TimeUnit;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,24 +17,35 @@ public class VirtualThreadsConsoleApplication implements CommandLineRunner {
 	@Autowired
 	@Qualifier("virtualThreadsService")
 	private MultipleThreadsTask virtualThreadService;
-	
+
 	@Autowired
 	@Qualifier("regularThreadsService")
 	private MultipleThreadsTask regularThreadService;
-	
-	private static Logger LOG = LoggerFactory.getLogger(VirtualThreadsConsoleApplication.class);
+
+	private static final Logger LOG = LoggerFactory.getLogger(VirtualThreadsConsoleApplication.class);
 
 	public static void main(String[] args) {
-		LOG.info("STARTING THE APPLICATION");
-        SpringApplication.run(VirtualThreadsConsoleApplication.class, args);
-        LOG.info("APPLICATION FINISHED");
-    }
- 
-    @Override
-    public void run(String... args) {
-        LOG.info("EXECUTING : command line runner");
- 
-        LOG.info("Virtual=> " + virtualThreadService.doTask() + " milliseconds");
-        LOG.info("Regular=> " + regularThreadService.doTask() + " milliseconds");
-    }
+		VirtualThreadsConsoleApplication.LOG.info("STARTING THE APPLICATION");
+		SpringApplication.run(VirtualThreadsConsoleApplication.class, args);
+		VirtualThreadsConsoleApplication.LOG.info("APPLICATION FINISHED");
+	}
+
+	@Override
+	public void run(String... args) {
+		VirtualThreadsConsoleApplication.LOG.info("EXECUTING : command line runner");
+
+		try {
+			TimeUnit.SECONDS.sleep(30);
+			runServices();
+			TimeUnit.SECONDS.sleep(30);
+		} catch (InterruptedException e) {
+			VirtualThreadsConsoleApplication.LOG.error(e.getMessage(), e);
+		}
+	}
+	
+	private void runServices() throws InterruptedException {
+		VirtualThreadsConsoleApplication.LOG.info("Virtual=> " + virtualThreadService.doTask() + " milliseconds");
+		TimeUnit.SECONDS.sleep(10);
+		VirtualThreadsConsoleApplication.LOG.info("Regular=> " + regularThreadService.doTask() + " milliseconds");
+	}
 }
