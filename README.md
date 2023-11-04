@@ -1,2 +1,2 @@
 # virtual-threads
-Project to demonstrate Visrtual Threads
+Project to demonstrate Virtual Threads
