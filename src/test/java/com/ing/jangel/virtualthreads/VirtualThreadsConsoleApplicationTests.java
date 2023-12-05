@@ -20,7 +20,7 @@ class VirtualThreadsConsoleApplicationTests {
 	private MultipleThreadsTask regularThreadService;
 	
 	@Test
-	void testSpeed() {
+	void testSpeed() throws InterruptedException {
 		long virtual = virtualThreadService.doTask();
 		long regular = regularThreadService.doTask();
 		

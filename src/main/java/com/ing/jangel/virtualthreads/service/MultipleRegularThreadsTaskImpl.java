@@ -1,6 +1,7 @@
 package com.ing.jangel.virtualthreads.service;
 
 import java.time.Duration;
+import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.stream.IntStream;
 
@@ -11,7 +12,7 @@ import org.springframework.stereotype.Service;
 @Qualifier("regularThreadsService")
 public class MultipleRegularThreadsTaskImpl extends MultipleThreadsTask {
 	@Override
-	protected void performTask() {
+	protected ExecutorService performTask() {
 		try (var executor = Executors.newCachedThreadPool()) {
 		    IntStream.range(0, MultipleThreadsTask.AMOUNT_TASKS).forEach(i -> {
 		        executor.submit(() -> {
@@ -20,6 +21,8 @@ public class MultipleRegularThreadsTaskImpl extends MultipleThreadsTask {
 		            return 0;
 		        });
 		    });
+		    
+		    return executor;
 		}
 	}
 }

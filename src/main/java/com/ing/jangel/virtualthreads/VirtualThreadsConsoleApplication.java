@@ -44,8 +44,8 @@ public class VirtualThreadsConsoleApplication implements CommandLineRunner {
 	}
 	
 	private void runServices() throws InterruptedException {
-		VirtualThreadsConsoleApplication.LOG.info("Virtual=> " + virtualThreadService.doTask() + " milliseconds");
-		TimeUnit.SECONDS.sleep(10);
 		VirtualThreadsConsoleApplication.LOG.info("Regular=> " + regularThreadService.doTask() + " milliseconds");
+		TimeUnit.SECONDS.sleep(10);
+		VirtualThreadsConsoleApplication.LOG.info("Virtual=> " + virtualThreadService.doTask() + " milliseconds");
 	}
 }
