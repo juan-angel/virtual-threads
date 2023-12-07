@@ -1,4 +1,4 @@
-package com.ing.jangel.virtualthreads.service;
+package com.ing.jangel.comparison.service;
 
 import java.time.Duration;
 import java.time.Instant;

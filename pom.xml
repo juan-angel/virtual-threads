@@ -4,42 +4,16 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<parent>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.7.17</version>
-		<relativePath /> <!-- lookup parent from repository -->
-	</parent>
-
 	<groupId>com.ing.jangel</groupId>
-	<artifactId>virtualthreads</artifactId>
+	<artifactId>virtual-threads</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Virtual Threads</name>
-	<description></description>
-	<properties>
-		<java.version>21</java.version>
-	</properties>
-
-	<dependencies>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter</artifactId>
-		</dependency>
+	<name>virtual-threads</name>
+	<description>Virtual Threads Demo</description>
+	<packaging>pom</packaging>
 
 
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-		</dependency>
-	</dependencies>
+	<modules>
+		<module>comparison</module>
+	</modules>
 
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-		</plugins>
-	</build>
 </project>

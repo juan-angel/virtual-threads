@@ -1,13 +1,14 @@
 package com.ing.jangel.virtualthreads;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import com.ing.jangel.virtualthreads.service.MultipleThreadsTask;
+import com.ing.jangel.comparison.service.MultipleThreadsTask;
+
 
 @SpringBootTest
 class VirtualThreadsConsoleApplicationTests {

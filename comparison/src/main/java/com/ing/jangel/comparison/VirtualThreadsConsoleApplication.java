@@ -1,4 +1,4 @@
-package com.ing.jangel.virtualthreads;
+package com.ing.jangel.comparison;
 
 import java.util.concurrent.TimeUnit;
 
@@ -10,7 +10,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import com.ing.jangel.virtualthreads.service.MultipleThreadsTask;
+import com.ing.jangel.comparison.service.MultipleThreadsTask;
 
 @SpringBootApplication
 public class VirtualThreadsConsoleApplication implements CommandLineRunner {

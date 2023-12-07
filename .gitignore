@@ -28,6 +28,7 @@ replay_pid*
 org.*
 .classpath
 .project
+comparison/target/**
 
 java*/target/**
 java*/org.*
