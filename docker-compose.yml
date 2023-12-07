@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  java17:
+    build: microjava17
+    ports:
+      - 8080:8080
+      - 9010:9010
+  java21:
+    build: microjava21
+    ports:
+      - 8081:8080
+      - 9011:9011

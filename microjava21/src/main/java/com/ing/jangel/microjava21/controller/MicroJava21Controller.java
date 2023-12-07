@@ -15,7 +15,7 @@ public class MicroJava21Controller {
 		
 		for (int i = 0; i < n; i++) {
 			BigInteger.valueOf(System.nanoTime());
-			System.out.println(s += this.randomChar());
+			s += this.randomChar();
 			BigInteger.valueOf(System.nanoTime());
 		}
 
