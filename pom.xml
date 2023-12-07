@@ -14,6 +14,8 @@
 
 	<modules>
 		<module>comparison</module>
+		<module>microjava17</module>
+		<module>microjava21</module>
 	</modules>
 
 </project>

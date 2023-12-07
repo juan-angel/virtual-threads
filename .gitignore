@@ -29,6 +29,8 @@ org.*
 .classpath
 .project
 comparison/target/**
+microjava17/target/**
+microjava21/target/**
 
 java*/target/**
 java*/org.*
