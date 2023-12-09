@@ -7,10 +7,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import com.ing.jangel.comparison.VirtualThreadsConsoleApplication;
 import com.ing.jangel.comparison.service.MultipleThreadsTask;
 
-
-@SpringBootTest
+@SpringBootTest(classes = VirtualThreadsConsoleApplication.class)
 class VirtualThreadsConsoleApplicationTests {
 	@Autowired
 	@Qualifier("virtualThreadsService")
