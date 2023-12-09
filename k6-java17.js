@@ -1,6 +1,9 @@
-import http from 'k6/http';
-import { sleep } from 'k6';
+import { check } from "k6";
+import http from "k6/http";
 
 export default function() {
-	http.get('http://localhost:8080');
-}
+  let res = http.get("http://localhost:8080");
+  check(res, {
+    "is status 200": (r) => r.status === 200
+  });
+};

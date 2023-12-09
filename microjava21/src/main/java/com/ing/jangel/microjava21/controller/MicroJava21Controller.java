@@ -2,6 +2,7 @@ package com.ing.jangel.microjava21.controller;
 
 import java.math.BigInteger;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -9,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class MicroJava21Controller {
 
 	@GetMapping("/")
-	public String main() {
+	public ResponseEntity<String> main() {
 		var s = String.valueOf(this.randomChar());
 		var n = (System.currentTimeMillis() % 1000) + 10000;
 		
@@ -19,13 +20,13 @@ public class MicroJava21Controller {
 			BigInteger.valueOf(System.nanoTime());
 		}
 
-		return Thread.currentThread().toString();
+		return ResponseEntity.ok(Thread.currentThread().toString());
 	}
 	
 	private char randomChar () {
 	    int rnd = (int) (Math.random() * 52);
 	    char base = (rnd < 26) ? 'A' : 'a';
+	    
 	    return (char) (base + rnd % 26);
-
 	}
 }
